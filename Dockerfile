@@ -4,7 +4,7 @@ FROM ubuntu:22.04
 
 ENV DEX_TOOLS_VERSION "v2.3"
 ENV APKTOOL_VERSION "2.8.1"
-ENV JD_CMD_VERSION "1.2.0"
+ENV JD_CMD_VERSION "1.0.0.Final"
 
 RUN DEBIAN_FRONTEND=noninteractive
 
@@ -32,7 +32,7 @@ RUN chmod +x "/tools/apktool/apktool.jar"
 
 # Install jd-cmd
 
-RUN wget -q -O "jd-cmd.zip" "https://github.com/kwart/jd-cmd/releases/download/jd-cli-$JD_CMD_VERSION/jd-cli-$JD_CMD_VERSION-dist.zip"
+RUN wget -q -O "jd-cmd.zip" "https://github.com/kwart/jd-cmd/releases/download/jd-cmd-$JD_CMD_VERSION/jd-cli-$JD_CMD_VERSION-dist.zip"
 RUN mkdir /tools/jd-cmd
 RUN unzip -q "jd-cmd.zip" -d /tools/jd-cmd
 RUN chmod +x "/tools/jd-cmd/jd-cli"
