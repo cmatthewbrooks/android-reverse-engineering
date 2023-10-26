@@ -38,5 +38,5 @@ echo "[+] Extracting with dex2jar...DONE"
 
 echo "[+] Decompiling with jd-cli..."
 mkdir -p "jd"
-docker run --rm -it -v $WORKING_DIR:/data $IMAGE /tools/jd-cmd/jd-cli -od "classes_decompiled" "dex2jar.jar"
+docker run --rm -it -v $WORKING_DIR:/data $IMAGE java -jar /tools/jd-cli/jd-cli -ods "classes_decompiled" -g ALL "dex2jar.jar"
 echo "[+] Decompiling with jd-cli...DONE"
